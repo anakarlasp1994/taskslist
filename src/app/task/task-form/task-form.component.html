@@ -1,0 +1,87 @@
+<div [ngClass]="{ 'custom-form': focusTextArea || inputText }">
+   
+    <div class="flex-container custom-editor">
+        <i-feather name="plus-square" class="fill-blue"></i-feather>
+        <div #inputField
+          id="inputField"
+          contenteditable="true"
+          (focus)="showAllForm(true)"
+          (blur)="showAllForm(false)"
+          (input)="onInput($event)"
+          class="custom-text">  
+        </div>
+        @if (!inputText) {
+            <span class="placeholder">Type to add new task</span>
+        }
+        @if (focusTextArea || inputText) {
+            <img src="avatar1.png"/>
+        }@else {
+            <div class="space-img"></div>
+        }
+    </div>
+
+    
+    @if (focusTextArea || inputText) {
+        <mat-divider ></mat-divider>
+    } 
+    @if (focusTextArea || inputText) {
+        <div class="flex-container">
+            <div class="container-button">
+                <button class="secondary-button open-button" [disabled]="!inputText">
+                    <i-feather name="maximize-2"></i-feather>
+                    @if(!isSmallScreen){
+                        <span>Open</span>
+                    }
+                </button>
+                <button class="tertiary-button tertiary-button-border" [disabled]="!inputText">
+                    <i-feather name="calendar"></i-feather>
+                    @if(!isSmallScreen){
+                        Today
+                    }
+                </button>
+                <button class="tertiary-button tertiary-button-border" [disabled]="!inputText">
+                    <i-feather name="unlock"></i-feather>
+                    @if(!isSmallScreen){
+                        Public
+                    }
+                </button>
+                <button class="tertiary-button tertiary-button-border" [disabled]="!inputText">
+                    <i-feather name="sun"></i-feather>
+                    @if(!isSmallScreen){
+                        Highlight
+                    }
+                </button>
+                <button class="tertiary-button tertiary-button-border" [disabled]="!inputText">
+                    <i-feather name="stop-circle"></i-feather>
+                    @if(!isSmallScreen){
+                        Estimation
+                    }
+                </button>
+                
+            </div>
+            <div class="container-button">
+                @if(!isSmallScreen){
+                    <button id="cancel" class="secondary-button" (click)="cancel()">Cancel</button>
+                    <button id="add" class="primary-button" (click)="add()">
+                        @if(inputText) {
+                            Add
+                        }@else{
+                            Ok
+                        }
+                    </button>
+                }@else{
+                    @if(inputText){
+                        <button id="add" class="primary-button" (click)="add()">
+                            <i-feather name="save"></i-feather>
+                        </button>
+                    }@else{
+                        <button class="primary-button">
+                            <i-feather name="x"></i-feather>
+                        </button>
+                    }
+                }
+            </div>
+        </div>
+    }
+    
+</div>

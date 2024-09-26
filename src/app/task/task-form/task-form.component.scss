@@ -1,0 +1,170 @@
+$breakpoint-lg: 1230px;
+
+.fill-blue{
+    stroke: #007FFF;
+} 
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container-button button {
+    margin: 8px 8px 8px 0;
+}
+.secondary-button{
+   
+    gap: 0px;
+    background: #EAF0F5;
+    border: 1px solid #EAF0F5;
+
+    //styleName: Button Label;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #12142C;
+
+}
+
+
+.tertiary-button{
+    gap: 12px;
+    background: #FFFFFF;
+
+    //styleName: Button Label;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #8A94A6;
+
+}
+
+@media (max-width: $breakpoint-lg) {
+    .tertiary-button-border {
+      border: none;
+    }
+    button{
+        border-radius: 4px 4px 4px 4px;
+        padding: 8px 0px 0px 0px;
+        height: 40px;
+    }
+    .open-button{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px !important;
+    }
+    .open-button i-feather{
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+    .primary-button{
+        width: 40px;
+        height: 40px;
+        padding: 8px 0px 0px 0px;
+        border-radius: 4px 4px 4px 4px;
+        background: #0D55CF;
+        border: 1px solid #0D55CF;
+    }
+    .primary-button i-feather{
+        stroke: #FFFFFF;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+}
+@media (min-width: $breakpoint-lg) {
+    .tertiary-button-border {
+      border: 1px solid #C6CDD2;
+    }
+    
+    button{
+        border-radius: 4px 4px 4px 4px;
+        padding: 13px 24px 13px 24px;
+        height: 40px;
+    }
+    .open-button{
+        margin-right: 30px !important;
+        margin-left: 10px !important;
+    }
+    .primary-button{
+        gap: 0px;
+        background: #0D55CF;
+        border: 1px solid #0D55CF;
+        //styleName: Button Label;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        color: #FFFFFF;
+    
+    }
+}
+
+button:disabled{
+    opacity: 50%;
+}
+
+button i-feather{
+    width: 20px;
+    height: 20px;
+    margin-top: -4px;
+    margin-right: 5px;
+}
+
+.custom-editor{
+    width: 100%;
+}
+
+.custom-editor i-feather{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.custom-editor img{
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    opacity: 50%;
+}
+.custom-editor .space-img{
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+.custom-form{
+    box-shadow: 0px 8px 16px 0px #0000000A;
+    background: #FFFFFF;
+    border: 1px solid #F1F3F4;
+}
+
+mat-divider{
+    border-top-color: #E7ECEF;
+}
+
+#inputField {
+    outline: none; /* Remove default outline */
+}
+
+.placeholder {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 70px;
+    color: #8A94A6; 
+    pointer-events: none; /* Prevent clicks on the placeholder */
+  }
+
+.custom-text{
+    white-space: pre-wrap;
+    width:90%; 
+    min-height:50px;
+    margin-top: 10px;
+}
+
