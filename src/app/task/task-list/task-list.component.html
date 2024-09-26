@@ -1,0 +1,22 @@
+<!-- Show task list -->
+@for (task of tasks; track task;) {    
+    <div [id]="task.id" class="word-container">
+        <i-feather name="square" class="check"></i-feather>
+
+        @for (word of task.words; track word; let  i = $index) {    
+            <span [id]="'span'+task.id+'_'+i"
+                [ngClass]="{'word':word.type=='Word','no-word': word.type!='Word'}"
+                [ngStyle]="{'color': word.color, 'background': word.background}">
+                @if(word.type=='Mention') {
+                    <i-feather name="user" [ngStyle]="{'stroke': word.color}"></i-feather>
+                }@else if(word.type=='Link'){
+                    <i-feather name="link" [ngStyle]="{'stroke': word.color}"></i-feather>
+                }@else if(word.type=='Mail'){
+                    <i-feather name="mail" [ngStyle]="{'stroke': word.color}"></i-feather>
+                }
+                {{word.show}}
+            </span>
+        }
+        
+    </div>
+}
